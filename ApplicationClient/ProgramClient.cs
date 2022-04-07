@@ -10,17 +10,25 @@ namespace ApplicationClient
         static void Main(string[] args)
         {
             Console.WriteLine("Клієнт посилає запит на сервер :)");
-            IPAddress serverIP = IPAddress.Parse("91.238.103.51");
+            string ip="127.0.0.1";
+            //string ip= "91.238.103.51";
+            IPAddress serverIP = IPAddress.Parse(ip);
             IPEndPoint serverEndPoint = new IPEndPoint(serverIP, 2076);
             Socket clientSender = new Socket(serverIP.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
             clientSender.Connect(serverEndPoint);
-            Console.WriteLine("Socket connectec to {0}",
+            Console.WriteLine("Socket connecte to {0}",
                 serverEndPoint);
             string message = Console.ReadLine();
 
-            byte[] bytes = Encoding.ASCII.GetBytes(message);
+            byte[] bytes = Encoding.UTF8.GetBytes(message);
             clientSender.Send(bytes); //відпраивти на вервер запит
+
+            byte[] serverResponse=new byte[1024];
+            //Отримую відповідь від сервера
+            clientSender.Receive(serverResponse);
+            string serverString = Encoding.UTF8.GetString(serverResponse);
+            Console.WriteLine("Server response: {0}", serverString);
 
             clientSender.Shutdown(SocketShutdown.Both);
             clientSender.Close();

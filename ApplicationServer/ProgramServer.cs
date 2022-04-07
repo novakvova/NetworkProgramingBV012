@@ -15,9 +15,9 @@ namespace ApplicationServer
             //Console.OutputEncoding = Encoding.Unicode;
             string ipAdress = "127.0.0.1";
             Console.WriteLine("Enter Server ip: ");
-            ipAdress = Console.ReadLine();
-            if (string.IsNullOrEmpty(ipAdress))
-                ipAdress = "91.238.103.51";
+            //ipAdress = Console.ReadLine();
+            //if (string.IsNullOrEmpty(ipAdress))
+            //    ipAdress = "91.238.103.51";
             int port = 2076;
 
             IPAddress serverIP = IPAddress.Parse(ipAdress);
@@ -27,7 +27,8 @@ namespace ApplicationServer
             Socket socket = new Socket(serverIP.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
             //Сервер буде отримувати запити на дану кінцеву точнку
-            socket.Bind(endPoint); socket.Listen(10); //черга яка може бути до сервера
+            socket.Bind(endPoint); 
+            socket.Listen(10); //черга яка може бути до сервера
             Console.WriteLine("Сервер очікує запитів від клієнтів ...");
             while (true)
             {
@@ -36,10 +37,12 @@ namespace ApplicationServer
                 byte[] bytes = new byte[1024];
                 //Очкікує дані від клієнта 
                 int size = client.Receive(bytes); // ASCII - 1 байт - Hello - 5 Байт
-                String text = Encoding.ASCII.GetString(bytes);
+                String text = Encoding.UTF8.GetString(bytes);
                 Console.WriteLine("Client: \n message {0} \n ip: {1}", text, client.RemoteEndPoint.ToString());
-                //byte[] clintSendText = Encoding.ASCII.GetBytes($"{DateTime.Now}");
-                //client.Send(clintSendText);
+                //Відповідь клієнту від сервера
+                byte[] clintSendText = Encoding.UTF8.GetBytes($"{DateTime.Now}");
+                client.Send(clintSendText);
+                //завершаємо роботу із клієнтом
                 client.Shutdown(SocketShutdown.Both);
                 client.Close();
             }
