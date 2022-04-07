@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServer", "ApplicationServer\ApplicationServer.csproj", "{1504A38C-16D0-4210-B6E1-49C95853BA3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationServer", "ApplicationServer\ApplicationServer.csproj", "{1504A38C-16D0-4210-B6E1-49C95853BA3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationClient", "ApplicationClient\ApplicationClient.csproj", "{28B27B5E-DC62-4F76-8CC6-87D2A4DC3428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationClient", "ApplicationClient\ApplicationClient.csproj", "{28B27B5E-DC62-4F76-8CC6-87D2A4DC3428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerAsyncSocket", "ServerAsyncSocket\ServerAsyncSocket.csproj", "{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{28B27B5E-DC62-4F76-8CC6-87D2A4DC3428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28B27B5E-DC62-4F76-8CC6-87D2A4DC3428}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28B27B5E-DC62-4F76-8CC6-87D2A4DC3428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
