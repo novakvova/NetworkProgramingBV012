@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationServer", "Applic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationClient", "ApplicationClient\ApplicationClient.csproj", "{28B27B5E-DC62-4F76-8CC6-87D2A4DC3428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerAsyncSocket", "ServerAsyncSocket\ServerAsyncSocket.csproj", "{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerAsyncSocket", "ServerAsyncSocket\ServerAsyncSocket.csproj", "{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleintAsyncSocket", "CleintAsyncSocket\CleintAsyncSocket.csproj", "{4E7C89D0-FF7E-44E4-BFE2-3D0E2320C558}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F76A4B8D-AFFB-4352-8972-3C4165BF2A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7C89D0-FF7E-44E4-BFE2-3D0E2320C558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7C89D0-FF7E-44E4-BFE2-3D0E2320C558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7C89D0-FF7E-44E4-BFE2-3D0E2320C558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7C89D0-FF7E-44E4-BFE2-3D0E2320C558}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

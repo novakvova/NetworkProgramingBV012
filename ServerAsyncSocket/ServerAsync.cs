@@ -22,11 +22,12 @@ namespace ServerAsyncSocket
                 server.Listen(100);
                 while(true)
                 {
+                    allDone.Reset();
                     Console.WriteLine("Thread id server {0}", Thread.CurrentThread.ManagedThreadId);
                     Console.WriteLine("Server start {0}", endPoint);
                     //Якщо прийде запит від клієнта
                     server.BeginAccept(AcceptCallback, server);
-                    //Thread.Sleep(4000);
+                    allDone.WaitOne();
                 }
             }
             catch(Exception ex)
@@ -38,6 +39,7 @@ namespace ServerAsyncSocket
         //Обробка асихрого запита від клієнта
         public static void AcceptCallback(IAsyncResult ar) 
         {
+            allDone.Set();
             Socket server = (Socket)ar.AsyncState;
             Socket client = server.EndAccept(ar); //отримали запит від клієнта
             Console.WriteLine("Thread id client server accept {0}", Thread.CurrentThread.ManagedThreadId);
