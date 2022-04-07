@@ -9,9 +9,11 @@ namespace ApplicationClient
     {
         static void Main(string[] args)
         {
+            //Console.InputEncoding = Encoding.UTF8;
+            //Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Клієнт посилає запит на сервер :)");
-            string ip="127.0.0.1";
-            //string ip= "91.238.103.51";
+            //string ip="127.0.0.1";
+            string ip= "91.238.103.51";
             IPAddress serverIP = IPAddress.Parse(ip);
             IPEndPoint serverEndPoint = new IPEndPoint(serverIP, 2076);
             Socket clientSender = new Socket(serverIP.AddressFamily,
