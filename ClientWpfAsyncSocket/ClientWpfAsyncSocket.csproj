@@ -8,18 +8,16 @@
 
   <ItemGroup>
     <None Remove="images\gear_mini.png" />
+    <None Remove="images\settings_background.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="images\gear_mini.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="images\settings_background.jpg">
+    <Resource Include="images\settings_background.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -30,7 +30,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Height="50" x:Name="Setting" VerticalAlignment="Bottom" Width="50">
+            <Button Grid.Column="1" Height="50" x:Name="Setting" VerticalAlignment="Bottom" Width="50" Click="Setting_Click">
                 <Image Grid.Column="1" Source="images\gear_mini.png"></Image>
             </Button>
         </Grid>

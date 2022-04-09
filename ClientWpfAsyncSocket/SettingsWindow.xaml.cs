@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ClientWpfAsyncSocket
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SettingsWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SettingsWindow : Window
     {
-        public MainWindow()
+        public SettingsWindow()
         {
             InitializeComponent();
-        }
-
-        private void Setting_Click(object sender, RoutedEventArgs e)
-        {
-            SettingsWindow window = new SettingsWindow();
-            window.ShowDialog();
         }
     }
 }
