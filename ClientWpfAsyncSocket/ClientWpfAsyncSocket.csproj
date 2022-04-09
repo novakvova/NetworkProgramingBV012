@@ -20,4 +20,10 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="setting.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

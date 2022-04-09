@@ -21,7 +21,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="IP" FontSize="18" Height="26" Margin="40,0"></TextBox>
+            <TextBox x:Name="txtIP" FontSize="18" Height="26" TextChanged="IP_TextChanged" Margin="40,0"></TextBox>
             <TextBlock Grid.Column="1" FontSize="35" FontWeight="ExtraBlack" Width="60" x:Name="checkIP">-</TextBlock>
         </Grid>
         <Grid Grid.Row="2">
@@ -29,9 +29,9 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="Port" FontSize="18" Height="26"  Margin="40,0"></TextBox>
+            <TextBox x:Name="txtPort" FontSize="18" Height="26" TextChanged="Port_TextChanged" Margin="40,0"></TextBox>
             <TextBlock Grid.Column="1" FontSize="35" Width="60" x:Name="checkPort" FontWeight="ExtraBlack">-</TextBlock>
         </Grid>
-        <Button Grid.Row="3" Height="45" Width="120" FontSize="22" IsEnabled="False" Name="SaveSettings">Save</Button>
+        <Button Grid.Row="3" Height="45" Width="120" FontSize="22" IsEnabled="False" Name="SaveSettings" Click="SaveSettings_Click">Save</Button>
     </Grid>
 </Window>
