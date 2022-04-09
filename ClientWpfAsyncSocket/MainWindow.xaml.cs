@@ -80,7 +80,7 @@ namespace ClientWpfAsyncSocket
                 client.BeginConnect(remoteEP,
                     new AsyncCallback(ConnectCallback), client);
                 connectDone.WaitOne();
-                lbMessage.Items.Add("Відкрили з'яднання до серверу");
+                
                 // Send test data to the remote device.  
                 Send(client, $"{text}<EOF>");
                 sendDone.WaitOne();
@@ -102,13 +102,7 @@ namespace ClientWpfAsyncSocket
                 Console.WriteLine(e.ToString());
             }
         }
-        //public void DispatchMy(this DispatcherObject source, Action func)
-        //{
-        //    if (source.Dispatcher.CheckAccess())
-        //        func();
-        //    else
-        //        source.Dispatcher.Invoke(func);
-        //}
+
 
         private void ConnectCallback(IAsyncResult ar)
         {
@@ -116,23 +110,15 @@ namespace ClientWpfAsyncSocket
             {
                 // Retrieve the socket from the state object.  
                 Socket client = (Socket)ar.AsyncState;
-
                 // Complete the connection.  
                 client.EndConnect(ar);
                 int connectThreadID = Thread.CurrentThread.ManagedThreadId;
-                //Console.WriteLine("Socket connected to {0}",
-                //    client.RemoteEndPoint.ToString());
-                try
+                string connectTo = client.RemoteEndPoint.ToString();
+                Dispatcher.BeginInvoke(() =>
                 {
-                    //DispatchMy.Invoke(new Action(() =>
-                    //{
-                    //    //BAD -------------
-                    //}));
-                }
-                catch (Exception ex)
-                {
-                    string message = ex.Message;
-                }
+                    lbMessage.Items.Add($"Socket connected to {connectTo}");
+                });
+
                 // Signal that the connection has been made.  
                 connectDone.Set();
             }
